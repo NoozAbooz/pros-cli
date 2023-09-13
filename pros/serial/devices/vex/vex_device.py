@@ -58,7 +58,7 @@ class VEXDevice(GenericDevice):
         response_header_stack = list(response_header)
         rx = bytearray()
         if timeout is None:
-            timeout = self.default_timeout
+            timeout = self.default_timeout + 0.4
         while (len(rx) > 0 or time.time() - start_time < timeout) and len(response_header_stack) > 0:
             b = self.port.read(1)
             if len(b) == 0:
