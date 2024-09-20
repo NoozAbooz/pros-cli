@@ -16,6 +16,8 @@ jobs:
       - name: Update Build Number
         id: step1
         run: |
+              git describe --tags
+              git clean -f
               python3 version.py
               echo "::set-output name=test::$(cat version)"
 
@@ -90,4 +92,4 @@ jobs:
       uses: actions/upload-artifact@v3.1.0
       with:
         name: ${{ matrix.os }}-${{needs.update_build_number.outputs.output1}}
-        path: dist/*
+        path: dist/pros/*
