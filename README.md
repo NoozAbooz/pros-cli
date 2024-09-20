@@ -5,7 +5,7 @@
 PROS is the only open source development environment for the VEX EDR Platform.
 
 This project provides all of the project management related tasks for PROS. It is currently responsible for:
- - Downloading kernel templates
+ - Downloading kernel teplates
  - Creating, upgrading projects
  - Uploading binaries to VEX Microcontrollers
 
