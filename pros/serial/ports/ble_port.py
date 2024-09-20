@@ -59,7 +59,7 @@ class BluetoothPort(BasePort):
         peripherals = adapter.scan_get_results()
 
 
-        peripherals = [peripheral for peripheral in peripherals if "VEX_V5" in peripheral.identifier()]
+        peripherals = [peripheral for peripheral in peripherals if "Da Kawaii K" in peripheral.identifier()]
         peripherals = sorted(peripherals, key=lambda peripheral: peripheral.rssi())
 
         self.peripheral = peripherals[0]
@@ -74,7 +74,7 @@ class BluetoothPort(BasePort):
         self.peripheral.write_request(self.UUIDs["SERVICE"], self.UUIDs["PAIRING"], bytes([0xff, 0xff, 0xff, 0xff]))
 
         # Send pairing code
-        pairing_bytes = bytes(int(c) for c in "4600")
+        pairing_bytes = bytes(int(c) for c in "8367")
 
         self.peripheral.write_request(self.UUIDs["SERVICE"], self.UUIDs["PAIRING"], pairing_bytes)
         print("Sent pairing code")
