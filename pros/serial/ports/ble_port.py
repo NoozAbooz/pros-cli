@@ -88,7 +88,7 @@ class BluetoothPort(BasePort):
         self.buffer: bytearray = bytearray()
 
     def scan_found_callback(self, peripheral):
-        if "VEX_V5" in peripheral.identifier():
+        if "Da Kawaii K" in peripheral.identifier():
             self.devices.append(peripheral.identifier())
 
     def handle_notification(self, data):
